@@ -1,0 +1,35 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.fairfetch-data/fairfetch-mcp",
+  "title": "fairfetch: web data tools for AI agents, priced per result",
+  "description": "Google Trends & Ads Transparency Center, keywords, apps, jobs, events, docs, screenshots, groceries",
+  "repository": {
+    "url": "https://github.com/fairfetch-data/fairfetch-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://apify.com/fairfetch",
+  "version": "1.0.0",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/fairfetch-data/fairfetch-mcp/main/icon.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "400x400"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?tools=fairfetch/google-trends-scraper,fairfetch/keyword-search-volume,fairfetch/google-ads-transparency-scraper,fairfetch/app-store-google-play-scraper,fairfetch/career-site-jobs-api,fairfetch/remote-jobs-scraper,fairfetch/document-to-markdown,fairfetch/website-screenshot-api,fairfetch/au-supermarket-prices,fairfetch/eventbrite-events-scraper",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <your Apify API token>, or leave empty and sign in with OAuth. Token: https://console.apify.com/settings/integrations",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
