@@ -13,17 +13,17 @@ sign-in, billing and the servers.
 | Tool (Apify Actor) | What it returns | Price per result | Per run |
 |---|---|---|---|
 | [`fairfetch/google-trends-scraper`](https://apify.com/fairfetch/google-trends-scraper) | Google Trends: interest over time, by region or city, related queries, up to 5 terms compared, Trending Now | $0.30 / 1,000 rows | $0.00005 |
-| [`fairfetch/keyword-search-volume`](https://apify.com/fairfetch/keyword-search-volume) | Google Ads keyword data (via DataForSEO): monthly search volume, CPC, competition, 12-month trend, keyword ideas | $3 / 1,000 keywords, $0.10 per fresh lookup of up to 1,000 keywords | $0.00005 |
-| [`fairfetch/google-ads-transparency-scraper`](https://apify.com/fairfetch/google-ads-transparency-scraper) | Google Ads Transparency Center: an advertiser's ads with image and YouTube links, dates, regions, EU reach, ad text where Google shows it | $1 / 1,000 ads | $0.00005 |
-| [`fairfetch/app-store-google-play-scraper`](https://apify.com/fairfetch/app-store-google-play-scraper) | App Store and Google Play apps, ratings, reviews (no reviewer names or IDs), search results and top charts | $1 / 1,000 apps, $0.10 / 1,000 reviews | $0.00005 |
+| [`fairfetch/keyword-search-volume`](https://apify.com/fairfetch/keyword-search-volume) | Google Ads keyword data (via DataForSEO): monthly search volume, CPC, competition, 12-month trend, keyword ideas | $6 / 1,000 keywords, $0.10 per fresh lookup of up to 1,000 keywords | $0.00005 |
+| [`fairfetch/google-ads-transparency-scraper`](https://apify.com/fairfetch/google-ads-transparency-scraper) | Google Ads Transparency Center: an advertiser's ads with image and YouTube links, dates, regions, EU reach, ad text where Google shows it | $2 / 1,000 ads | $0.00005 |
+| [`fairfetch/app-store-google-play-scraper`](https://apify.com/fairfetch/app-store-google-play-scraper) | App Store and Google Play apps, ratings, reviews (no reviewer names or IDs), search results and top charts | $1.50 / 1,000 apps, $0.10 / 1,000 reviews | $0.00005 |
 | [`fairfetch/career-site-jobs-api`](https://apify.com/fairfetch/career-site-jobs-api) | Company job boards on Greenhouse, Lever, Ashby, Workday and SmartRecruiters, with new/closed job tracking | $1.50 / 1,000 jobs | $0.0005 |
 | [`fairfetch/remote-jobs-scraper`](https://apify.com/fairfetch/remote-jobs-scraper) | Remote jobs from Remote OK and Jobicy in one schema, de-duplicated, with new/closed job tracking | $1 / 1,000 jobs | $0.0005 |
-| [`fairfetch/document-to-markdown`](https://apify.com/fairfetch/document-to-markdown) | PDF, Word, PowerPoint, Excel, CSV and web pages from URLs to Markdown and text (no OCR for scanned PDFs) | $1 / 1,000 documents, $0.10 / 1,000 pages (PDF page or slide with text, or 1,000 spreadsheet rows) | $0.00005 |
+| [`fairfetch/document-to-markdown`](https://apify.com/fairfetch/document-to-markdown) | PDF, Word, PowerPoint, Excel, CSV and web pages from URLs to Markdown and text (no OCR for scanned PDFs) | $2 / 1,000 documents, $0.10 / 1,000 pages (PDF page or slide with text, or 1,000 spreadsheet rows) | $0.00005 |
 | [`fairfetch/website-screenshot-api`](https://apify.com/fairfetch/website-screenshot-api) | Screenshots (PNG, JPEG) or PDFs of public web pages: full page, mobile emulation, dark mode, cookie banners hidden | $3 / 1,000 screenshots, $10 / 1,000 full-page screenshots or PDFs | $0.0051 ($0.005 run start + $0.0001 Apify start fee at 2 GB) |
 | [`fairfetch/au-supermarket-prices`](https://apify.com/fairfetch/au-supermarket-prices) | Coles, Woolworths and ALDI Australia prices, specials and unit prices, with change tracking | $1.50 / 1,000 products, $0.30 / 1,000 products checked in only-changes mode | $0.00005 |
-| [`fairfetch/eventbrite-events-scraper`](https://apify.com/fairfetch/eventbrite-events-scraper) | Eventbrite events by city or online, keyword, category and date, with venues and ticket price ranges | $1 / 1,000 events, $2 / 1,000 events with event-page details | $0.00005 |
+| [`fairfetch/eventbrite-events-scraper`](https://apify.com/fairfetch/eventbrite-events-scraper) | Eventbrite events by city or online, keyword, category and date, with venues and ticket price ranges | $2.50 / 1,000 events, $4 / 1,000 events with event-page details | $0.00005 |
 
-Prices as read from the Apify API on 27 Oct 2026; the pricing on each tool's Apify page is
+Prices as read from the Apify API on 30 Oct 2026; the pricing on each tool's Apify page is
 authoritative. "Per run" is charged once per run: Apify's standard start fee (one per GB of run
 memory, at the tool's default memory, which is what MCP calls use) plus the tool's own run-start fee
 where it has one.
@@ -47,15 +47,15 @@ for runs in Apify Console or the API doesn't apply. What limits spending:
 | Tool | Input fields that bound a call | Example of a large call |
 |---|---|---|
 | `google-trends-scraper` | `maxItems` caps rows per run (default 0 = no cap); rows grow with terms, regions and time range | 10 terms over 5 years, interest over time only (2,610 rows): about $0.78 |
-| `keyword-search-volume` | `keywords`: up to 20,000 per run; `maxIdeas`: default 100, up to 5,000 (ideas are off by default) | 20,000 keywords plus 5,000 keyword ideas (21 lookups): about $77.10 |
-| `google-ads-transparency-scraper` | `maxAdsPerAdvertiser`: default 100, up to 50,000 per entry in `advertisers`; `maxAdvertisersPerName`: default 1, up to 10 | one advertiser at the 50,000-ad maximum: about $50 |
+| `keyword-search-volume` | `keywords`: up to 20,000 per run; `maxIdeas`: default 100, up to 5,000 (ideas are off by default) | 20,000 keywords plus 5,000 keyword ideas (21 lookups): about $152.10 |
+| `google-ads-transparency-scraper` | `maxAdsPerAdvertiser`: default 100, up to 50,000 per entry in `advertisers`; `maxAdvertisersPerName`: default 1, up to 10 | one advertiser at the 50,000-ad maximum: about $100 |
 | `app-store-google-play-scraper` | `maxResultsPerSearch`: default 20, up to 200; `maxAppsPerChart`: default 100, up to 200; `maxReviewsPerApp`: default 100, up to 100,000 (reviews are off by default) | one Google Play app with 100,000 reviews: about $10 |
 | `career-site-jobs-api` | `maxJobsPerCompany` (default 0 = every open job) for each entry in `companies` | every open job at a 731-role company (Stripe, tested): about $1.10 |
 | `remote-jobs-scraper` | `maxJobs` (default 0 = every job on the boards) | every job on both boards (about 920 on 18 Oct 2026): about $0.92 |
-| `document-to-markdown` | one document per entry in `urls`; `maxPages` per document (default 0 = all, up to 10,000); `maxFileSizeMb` (default 50) | 100 PDFs of 100 pages: about $1.10 |
+| `document-to-markdown` | one document per entry in `urls`; `maxPages` per document (default 0 = all, up to 10,000); `maxFileSizeMb` (default 50) | 100 PDFs of 100 pages: about $1.20 |
 | `website-screenshot-api` | one capture per entry in `urls` (no count limit) | 1,000 full-page screenshots: about $10.01 |
 | `au-supermarket-prices` | `maxItemsPerQuery`: default 30, up to 5,000 per query and supermarket (0 = all, up to 5,000) | one query at 5,000 products from each of the 3 supermarkets: about $22.50 |
-| `eventbrite-events-scraper` | `maxEventsPerSearch`: default 100, up to 1,000; `maxEvents` (default 0 = no total cap) | one search at 1,000 events with page details: about $2 |
+| `eventbrite-events-scraper` | `maxEventsPerSearch`: default 100, up to 1,000; `maxEvents` (default 0 = no total cap) | one search at 1,000 events with page details: about $4 |
 
 For direct API or Console runs (not MCP), every tool also stops cleanly at the maximum cost per run you
 set and keeps the results returned up to then.
